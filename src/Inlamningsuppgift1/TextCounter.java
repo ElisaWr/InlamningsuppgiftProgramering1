@@ -2,45 +2,34 @@ package Inlamningsuppgift1;
 
 public class TextCounter {
 
-    /*När användaren är klar skriver programmet ut
-    antal tecken och hur många rader som
-    användaren har skrivit, exklusive raden med
-    ordet stop*/
+    private String textEntry = ""; //Attribut för hela texten
+    private int lineCount = 0; // Attribut som räknas upp för varje text
+    private int endCommandLength;  // Attribut för stoppordets längd
 
-    /*Programmet skall bestå av två klasser:
-    ❖ En klass som läser in text och skriver ut
-    resultatet till användaren (Main)
-    ❖ En annan klass som räknar raderna och har
-    koll på antalet tecken (TextCounter)
-    ❖ Kontrollen för att ha koll på om användaren
-    har skrivit ordet stop eller inte får utföras i
-    vilken av klasserna man vill*/
-    private String textEntry = ""; //Attribut = textEntry
-    private int lineCount = 0; // Attribut = lineCount
-    private String endCommand;  // Attribut
-    private int endCommandLength;  // Attribut
-
-    public TextCounter (String terminationCommand) { //Konstruktor = TextCounter
-        endCommand = terminationCommand;
-        endCommandLength = endCommand.length();
+    //Konstruktor = TextCounter
+    public TextCounter (String terminationCommand) {
+        endCommandLength = terminationCommand.length();
     }
 
+   //Metod som lägger till en textrad
     public void addTextLine(String text) {
-
         lineCount = lineCount+1;
         textEntry = textEntry + text;
     }
 
+    //Metod som skickar ut antal inskrivna rader
     public int getNumberOfLines(){
         return lineCount-1;
     }
 
-    //public void printNumberOfCharacters(){
+    //Metod som räknar antal tecken
     public int getNumberOfCharacters(){
         int charCount = textEntry.length();
         charCount = charCount-endCommandLength;
         return charCount;
     }
+
+    //Metod som skickar ut hela inmatade texten inklusive stoppordet
     public String getTotalText(){
         return textEntry;
     }
