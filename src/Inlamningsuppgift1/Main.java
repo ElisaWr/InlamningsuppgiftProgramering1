@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner scanObject = new Scanner(System.in); //Skapar objektet scan
+        Scanner scanObject = new Scanner(System.in); //Skapar objektet scanObject
 
         String stopCommand = "Stop"; // annars fortsätter loopen för evigt
         System.out.println("Skriv in text i rutan, för att avsluta skriv " + stopCommand);
