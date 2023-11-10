@@ -15,7 +15,6 @@ public class Main {
 
         TextCounter textObject = new TextCounter(stopCommand); //Skapar objektet textObject
 
-        //textObject = objekt
         while (!Objects.equals(text, stopCommand)){  //inbyggd kontroll på "Stopp"
             //^varför inte != ? att ! betyder "inte" är urkorkat, de borde betyda väldigt
 
